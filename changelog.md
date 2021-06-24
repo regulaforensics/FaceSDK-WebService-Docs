@@ -4,25 +4,25 @@
 
 ### Functionality
 
-#### Detection.
+#### Detection
 
 1. New face detection algorithm, processing arbitrary face orientations. 
 2. Face thumbnail in responses, cropped and properly aligned.
 3. Rotation angle in response. 
 4. \(beta\) Face attributes: age\(child/adult\), emotion\(neutral/smile\).
 
-#### Matching.
+#### Matching
 
 1. Face ROI in response for face matching for unambiguous results interpretation. 
 2. Face thumbnail in responses.
 
-#### Liveness 3D.
+#### Liveness 3D
 
 1. Updated algorithms for liveness classification. 
 2. Rejecting faces with occlusions \(medicine mask, sunglasses, hat\). 
 3. Rejecting faces with art masks. 3.4 Rejecting faces with closed eyes.
 
-#### Liveness Depth.
+#### Liveness Depth
 
 1. Updated model for classification.
 
@@ -30,37 +30,22 @@
 
 #### Changed
 
-* **WARNING**: app validation logic returns 200 instead of 400 http codes. 
-
-  Previously, if you supply bad images, or wrong params, you will get response with 400 http code.
-
-  Starting from this version, you will always get 200 result and should check **code** property inside json-body, to get operation result.
-
-  All possible codes listed [here](https://github.com/regulaforensics/FaceSDK-web-openapi/blob/1a682a5dae2eb5e39a329127ff9e01a5f9cc84f0/common.yml#L45)
-
+* **WARNING**: app validation logic returns 200 instead of 400 http codes. Previously, if you supply bad images, or wrong params, you will get response with 400 http code. Starting from this version, you will always get 200 result and should check **code** property inside json-body, to get operation result. All possible codes listed [here](https://github.com/regulaforensics/FaceSDK-web-openapi/blob/1a682a5dae2eb5e39a329127ff9e01a5f9cc84f0/common.yml#L45)
 * **WARNING**: all related to project libraries changed their name and artifacts names to **FaceSDK**. Now project name is consistent across all platforms. 
 * **WARNING**: /detect now by default return only central face
-* face compare operation renamed to face match operation. 
-
-  This leads to chaining models names in clients. /compare endpoint renamed to /match endpoint. 
-
-  Old models and routes are kept via type aliases.
-
+* face compare operation renamed to face match operation. This leads to chaining models names in clients. /compare endpoint renamed to /match endpoint. Old models and routes are kept via type aliases.
 * Migrate to python 3.8
 * \[docker\] by default do not spam access log to stdout
-* \[docker\] send all apps logs to stdout instead of stderr
+* \[docker\] send all apps logs to **stdout** instead of stderr
 * \[docker\] logs format changed
-* \[linux,win\] by default store app logs into rotating "logs/app/facesdk-app.log" file
+* \[linux,win\] by **default** store app logs into daily rotating "logs/app/facesdk-app.log" file
 
 #### Added
 
-* add FACEAPI\_CERT\_FILE, FACEAPI\_KEY\_FILE env options for https for all platforms\(previously was ony in docker\)
-* process logs now support try\_id params\(beside custom id\). 
-
-  Now operations inputs and results saved under next id `invocation_id = uuid.uuid4().hex if not id else id + '_' + try_id`
-
-* add csharp client
+*  HTTPS certs **custom path** options for all platforms \(previously was only in docker\)
+* process logs now support **try\_id** params\(beside custom id\). Now operations inputs and results saved under next id `invocation_id = uuid.uuid4().hex if not id else id + '_' + try_id`
+* add **C\#** client
 * unify logging format across all platforms
-* add ability to store logs into files with daily rotation
-* json log formatting \(useful for log collectors\)
+* add ability to store logs into files with daily **rotation**
+* **JSON** log formatting \(useful for log collectors\)
 
