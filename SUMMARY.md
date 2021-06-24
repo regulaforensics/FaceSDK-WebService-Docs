@@ -20,5 +20,6 @@
 * [Support](troubleshooting/support.md)
 
 ---
+
 * [Changelog](changelog.md)
 

@@ -59,3 +59,4 @@ An example of version **3.0.310.2** can be interpreted as:
 * the Regula SDK version is `3.0`
 * the current neural network version is `310`
 * the webservice wrapper version is `2`
+
