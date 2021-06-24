@@ -2,6 +2,9 @@
 
 * [Introduction](README.md)
 
+## Installation
+
+* [Getting Started](installation/general.md)
 
 ## Integration
 
