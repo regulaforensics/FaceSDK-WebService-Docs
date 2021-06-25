@@ -67,7 +67,7 @@ There are **3** log types in our service:
 |  |  |  |
 | **PROCESS\_RESULTS\_LOG\_PATH** | "logs/process" | Specifies a folder to save processing results. Final output is a two files(with **_in** and **_out** suffixes), located in **endpoint/yyyy/mm/dd/hh** folder under specified in this property path. |
 |  |  |  |
-| **LOGS\_LVL**  | "info" | Specify application logs level. Possible values: "error", "warn", "info", "debug"  |
+| **LOGS\_LEVEL**  | "info" | Specify application logs level. Possible values: "error", "warn", "info", "debug"  |
 | **LOGS\_FORMATTER** | "text" | Possible values: **"text"** / **"json"**. Some log collectors require logs to be printed in json format. |
 
 Access and applications logs are printed to **stdout**.
