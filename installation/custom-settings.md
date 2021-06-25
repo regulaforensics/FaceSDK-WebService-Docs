@@ -1,6 +1,6 @@
 # Settings
 
-Webservice configures via **env** variables. To avoid names conflict with other tools, use the prefix **FACEAPI\_**. While it is not mandatory, we strongly **recommend** setting the options with prefixes. For readability, we will use the **primary** name for all settings below.
+Webservice is configured via **env** variables. To avoid names conflict with other tools, use the prefix **FACEAPI\_**. While it is not mandatory, we strongly **recommend** setting the options with prefixes. For readability, we will use the **primary** name for all settings below.
 
 All **relative** paths below is sub-paths for **installation** folder, or **/app/** folder for docker. Let's call it **app root folder**. 
 
@@ -19,6 +19,7 @@ On some systems, files beginning with a dot are hidden by default. Thus, **.env*
 | **BACKLOG** | WORKERS x 15 | Maximum number of requests in a queue awaiting processing |
 | **TIMEOUT** | 30 | Number of seconds for worker to process request. Workers silent for more than this many seconds are killed and restarted. |
 | **ENABLE\_DEMO\_WEB\_APP** | "true" | Serve a demo web app under host **root** url (ex. localhost:41101/ )  |
+| **LIC\_URL** [docker only]| | URL to regula.license file for further download, if the mount option is not available |
 
 ## HTTPS and CORS
 
@@ -66,6 +67,7 @@ There are **3** log types in our service:
 |  |  |  |
 | **PROCESS\_RESULTS\_LOG\_PATH** | "logs/process" | Specifies a folder to save processing results. Final output is a two files(with **_in** and **_out** suffixes), located in **endpoint/yyyy/mm/dd/hh** folder under specified in this property path. |
 |  |  |  |
+| **LOGS\_LVL**  | "info" | Specify application logs level. Possible values: "error", "warn", "info", "debug"  |
 | **LOGS\_FORMATTER** | "text" | Possible values: **"text"** / **"json"**. Some log collectors require logs to be printed in json format. |
 
 Access and applications logs are printed to **stdout**.
