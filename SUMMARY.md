@@ -5,6 +5,7 @@
 ## Installation
 
 * [Getting Started](installation/general.md)
+* [Settings](installation/custom-settings.md)
 
 ## Integration
 
