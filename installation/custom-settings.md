@@ -131,3 +131,8 @@ For access and applications logs files **day-based** rotation occurs every **mid
 On Linux and Win platforms webserver stores application logs in a file by default to speed up troubleshooting.
 {% endhint %}
 
+## Application
+
+| Option | Default | Description |
+| :--- | :--- | :--- |
+| **MATCHING\_INPUT\_COUNT\_PER\_TYPE** | 2 | Specify a **maximum** number of matching **inputs** of each type for **matching request**. |
