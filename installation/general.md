@@ -30,14 +30,14 @@ Heartbeats will **continue** and as soon as the License **becomes** valid again,
 
 ### Connect to license service via HTTP proxy
 
-If you host our solution in an isolated private environment, you can specify HTTP proxy via  `HTTPS_PROXY` env variable. Proxy will be used by webservice to connect to license service.
+If you host our solution in an isolated private environment, you can specify HTTP **proxy** via `HTTPS_PROXY` env variable. Proxy will be used by webservice to connect to license service.
 
 {% hint style="warning" %}
-Do not specify protocol prefix in proxy URL. Instead `HTTPS_PROXY=http(s)://host:port` use `HTTPS_PROXY=host:port`. 
+Do not specify protocol prefix in proxy URL. Instead `HTTPS_PROXY=http(s)://host:port` use `HTTPS_PROXY=host:port`
 {% endhint %}
 
 {% hint style="info" %}
-If you use your own tls certs, place them in `/etc/ssl/certs` folder in linux and docker envs.
+If you use your own TSL certs, place them in `/etc/ssl/certs` folder in Linux and docker envs.
 {% endhint %}
 
 ## Proxy Guard
