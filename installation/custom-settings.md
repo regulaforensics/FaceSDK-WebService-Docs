@@ -20,6 +20,7 @@ On some systems, files beginning with a dot are hidden by default. Thus, **.env*
 | **TIMEOUT** | 30 | Number of seconds for a worker to process a request. Workers silent for more than this many seconds are killed and restarted. |
 | **ENABLE\_DEMO\_WEB\_APP** | "true" | Serve a demo web app under host **root** url \(ex. localhost:41101/ \) |
 | **LIC\_URL** \[docker only\] |  | URL to regula.license file for further download, if the mount option is not available |
+| **HTTPS\_PROXY** |  | HTTP proxy, used to connect to license service. Do not specify protocol prefix in proxy URL. Instead of `HTTPS_PROXY=http(s)://host:port` use `HTTPS_PROXY=host:port`. |
 
 ## HTTPS and CORS
 

@@ -28,6 +28,18 @@ In case the online license is instance/worker-based, **heartbeats** will be moni
 
 Heartbeats will **continue** and as soon as the License **becomes** valid again, the operation of the webservice will restore **automatically**. In case there is **no** Internet connection when the request is sent, the result will be **TIMEOUT**.
 
+### Connect to license service via HTTP proxy
+
+If you host our solution in an isolated private environment, you can specify HTTP proxy via  `HTTPS_PROXY` env variable. Proxy will be used by webservice to connect to license service.
+
+{% hint style="warning" %}
+Do not specify protocol prefix in proxy URL. Instead `HTTPS_PROXY=http(s)://host:port` use `HTTPS_PROXY=host:port`. 
+{% endhint %}
+
+{% hint style="info" %}
+If you use your own tls certs, place them in `/etc/ssl/certs` folder in linux and docker envs.
+{% endhint %}
+
 ## Proxy Guard
 
 **Regula Face SDK** is **not** general HTTP webserver, that handles hundreds of request per second. Typical processing takes up to a few seconds, so we can call it CPU intensive. Considering that typical instance has 1-4 workers, we need to carefully manage workers time. One of the main sources of **waisting** worker's processing time is **slow clients** problem. When webservice receives request from client with a **slow** internet connection, free worker start receiving that request. The worker will be bottlenecked by the speed of the client connection, and it will be blocked **until** the slow client finishes sending **large** ID image. Being blocked means that this worker process can **not** handle any other request in the meantime, it’s just there, **idle**, waiting to receive the entire request, so it can start really processing it.
