@@ -9,7 +9,7 @@
 
 ## Usage
 
-* [1:N module](usage/1-n-module.md)
+* [1:N Face Identification Module](usage/1-n-module.md)
 
 ## Integration
 

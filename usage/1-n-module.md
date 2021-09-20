@@ -1,2 +1,2 @@
-# 1:N module
+# 1:N Face Identification Module
 
