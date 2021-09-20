@@ -136,3 +136,4 @@ On Linux and Win platforms webserver stores application logs in a file by defaul
 | Option | Default | Description |
 | :--- | :--- | :--- |
 | **MATCHING\_INPUT\_COUNT\_PER\_TYPE** | 2 | Specify a **maximum** number of matching **inputs** of each type for **matching request**. |
+
