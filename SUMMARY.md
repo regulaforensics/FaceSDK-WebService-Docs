@@ -7,6 +7,10 @@
 * [Getting Started](installation/general.md)
 * [Settings](installation/custom-settings.md)
 
+## Usage
+
+* [1:N module](usage/1-n-module.md)
+
 ## Integration
 
 * [OpenAPI Definitions](https://github.com/regulaforensics/FaceSDK-web-openapi)
