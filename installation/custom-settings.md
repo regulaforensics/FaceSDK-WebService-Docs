@@ -127,13 +127,27 @@ Access and applications logs are printed to **stdout**.
 
 For access and applications logs files **day-based** rotation occurs every **midnight UTC**. Service **keeps** the last **30 days** of log files.
 
-{% hint style="info" %}
-On Linux and Win platforms webserver stores application logs in a file by default to speed up troubleshooting.
-{% endhint %}
+## Sql Database
+
+1:n identification module requires sql database to operate. Currently, the functionality of the module is verified only
+on a `PostgreSQL`, `MySQL` and `SQLite` databases. Database can be specified as single URL string or a set of options.
+
+| Option | Default | Description |
+| :--- | :--- | :--- |
+| **SQL_DIALECT** | "mysql" | Dialect is a database type such as `mysql`, `postgresql` or `sqlite`. |
+| **SQL_HOST** | "0.0.0.1:3306' | Database host and port. |
+| **SQL_DB** | "regula_db' | Database name. |
+| **SQL_USER** | "regula' | Database user. |
+| **SQL_PASSWORD** | "Regulapasswd#1' | Database user password. |
+|  |  |  |
+| **SQL_URL** | | Database connection options as URL string. The form of the URL is `dialect://user:password@host/dbname[?key=value..]`.|
+
+
 
 ## Application
 
 | Option | Default | Description |
 | :--- | :--- | :--- |
+| **ENABLE\_IDENTIFICATION** | "false' | Specify "true" if you want to enable 1:n identification module |
 | **MATCHING\_INPUT\_COUNT\_PER\_TYPE** | 2 | Specify a **maximum** number of matching **inputs** of each type for **matching request**. |
 
